@@ -16,13 +16,17 @@ CREATE SCHEMA IF NOT EXISTS `guilddb` DEFAULT CHARACTER SET utf8 ;
 USE `guilddb` ;
 
 -- -----------------------------------------------------
--- Table `unity`
+-- Table `guild`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `unity` ;
+DROP TABLE IF EXISTS `guild` ;
 
-CREATE TABLE IF NOT EXISTS `unity` (
+CREATE TABLE IF NOT EXISTS `guild` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
+  `class` VARCHAR(45) NOT NULL,
+  `roll` VARCHAR(45) NOT NULL,
+  `raid_group` INT NOT NULL,
+  `race` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -39,10 +43,10 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `unity`
+-- Data for table `guild`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `guilddb`;
-INSERT INTO `unity` (`id`, `name`) VALUES (1, 'Hilros');
+INSERT INTO `guild` (`id`, `name`, `class`, `roll`, `raid_group`, `race`) VALUES (1, 'Hilros', 'Warlock', 'DPS', 5, 'Orc');
 
 COMMIT;
