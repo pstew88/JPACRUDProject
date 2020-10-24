@@ -44,6 +44,10 @@ class UnityTest {
 	void test() {
 		assertNotNull(unity);
 		assertEquals("Hilros", unity.getName());
+		assertEquals("Warlock", unity.getCharacter());
+		assertEquals("Dps", unity.getRoll());
+		assertEquals(5, unity.getRaidGroup());
+		assertEquals("Orc", unity.getRace());
 	}
 
 }
