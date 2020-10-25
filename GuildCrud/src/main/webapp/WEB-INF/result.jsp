@@ -14,6 +14,12 @@
 <c:when test= "${not empty guild}">
   <h5>Roster # ${guild.id} ${guild.name} ${guild.race} ${guild.character})</h5>
   <p>Role: ${guild.role} Group: ${guild.raidGroup}</p>
+<br>  
+  <form action="update.do" method="GET">
+  <input type="submit" value="Update Character" />
+  
+</form>
+
 </c:when>
 
 <c:when test="${not empty guilds}">

@@ -38,5 +38,9 @@
   <input type="submit" value="Show Character" />
 </form>
 
+<!-- <form action="updateChar.do" method="GET">
+  <input type="submit" value="Update Character" />
+</form> -->
+
 </body>
 </html>

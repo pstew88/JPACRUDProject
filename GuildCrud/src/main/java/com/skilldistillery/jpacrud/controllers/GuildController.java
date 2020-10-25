@@ -35,29 +35,39 @@ public class GuildController {
 		model.addAttribute("guild", guild);
 		return "result";
 	}
-	@RequestMapping(path = "getClass.do", method=RequestMethod.GET)
+
+	@RequestMapping(path = "getClass.do", method = RequestMethod.GET)
 	public String showClass(String character, Model model) {
 		System.out.println("inside show class method");
 		List<Guild> guild = guildDao.findByClass(character);
 		model.addAttribute("guilds", guild);
 		return "result";
 	}
+
 	@RequestMapping(path = "getRole.do")
 	public String showRole(String role, Model model) {
 		List<Guild> guild = guildDao.findByRole(role);
 		model.addAttribute("guilds", guild);
 		return "result";
 	}
+
 	@RequestMapping(path = "getGroup.do")
 	public String showGroup(int raidGroup, Model model) {
 		List<Guild> guild = guildDao.findByRaidGroup(raidGroup);
 		model.addAttribute("guilds", guild);
 		return "result";
 	}
+
 	@RequestMapping(path = "getRace.do")
 	public String showRace(String race, Model model) {
 		List<Guild> guild = guildDao.findByRace(race);
 		model.addAttribute("guilds", guild);
 		return "result";
+	}
+
+	@RequestMapping(path = "update.do")
+	public String update() {
+		return "update";
+
 	}
 }

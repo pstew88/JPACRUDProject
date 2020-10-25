@@ -91,18 +91,25 @@ public class GuildDAOImpl implements GuildDAO {
 		}	
 
 	@Override
-	public Guild editChar(Guild eChar) {
-		String jpql = "SELECT g FROM Guild g WHERE g.id = :id";
+	public Guild editChar(int id, Guild eChar) {
+
+		Guild g = em.find(Guild.class, id);
+		g.setName(eChar.getName());
+		g.setCharacter(eChar.getCharacter());
+		g.setRace(eChar.getRace());
+		g.setRaidGroup(eChar.getRaidGroup());
+		g.setRole(eChar.getRole());
 		
-		Guild emps = em.createQuery(jpql, Guild.class).getSingleResult();
-		emps.setName(eChar.getName());
-		emps.setCharacter(eChar.getCharacter());
-		emps.setRace(eChar.getRace());
-		emps.setRaidGroup(eChar.getRaidGroup());
-		emps.setRole(eChar.getRole());
+//		String jpql = "SELECT g FROM Guild g WHERE g.id = :id";
+//		Guild emps = em.createQuery(jpql, Guild.class).getSingleResult();
+//		emps.setId(eChar.getId());
+//		emps.setName(eChar.getName());
+//		emps.setCharacter(eChar.getCharacter());
+//		emps.setRace(eChar.getRace());
+//		emps.setRaidGroup(eChar.getRaidGroup());
+//		emps.setRole(eChar.getRole());
 		em.flush();
-		
-		return emps;
+		return g;
 	}
 
 	@Override

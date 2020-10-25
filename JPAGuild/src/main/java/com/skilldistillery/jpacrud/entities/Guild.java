@@ -19,6 +19,7 @@ public class Guild {
 	@Column(name = "raid_group")
 	private int raidGroup;
 	private String race;
+	
 	public int getId() {
 		return id;
 	}

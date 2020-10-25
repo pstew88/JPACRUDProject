@@ -22,7 +22,7 @@ public interface GuildDAO {
 
 	Guild addChar(Guild newChar);
 
-	Guild editChar(Guild eChar);
-
 	boolean deleteChar(int delChar);
+
+	Guild editChar(int id, Guild eChar);
 }
