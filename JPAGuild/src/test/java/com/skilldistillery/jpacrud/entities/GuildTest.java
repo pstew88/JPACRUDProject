@@ -12,11 +12,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UnityTest {
+class GuildTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Unity unity;
+	private Guild unity;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,7 +31,7 @@ class UnityTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		unity = em.find(Unity.class, 1);
+		unity = em.find(Guild.class, 1);
 	}
 
 	@AfterEach
@@ -45,7 +45,7 @@ class UnityTest {
 		assertNotNull(unity);
 		assertEquals("Hilros", unity.getName());
 		assertEquals("Warlock", unity.getCharacter());
-		assertEquals("Dps", unity.getRoll());
+		assertEquals("Dps", unity.getRole());
 		assertEquals(5, unity.getRaidGroup());
 		assertEquals("Orc", unity.getRace());
 	}

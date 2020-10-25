@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Unity {
+public class Guild {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Unity {
 	private String name;
 	@Column(name = "class")
 	private String character;
-	private String roll;
+	private String role;
 	@Column(name = "raid_group")
 	private int raidGroup;
 	private String race;
@@ -37,11 +37,11 @@ public class Unity {
 	public void setCharacter(String character) {
 		this.character = character;
 	}
-	public String getRoll() {
-		return roll;
+	public String getRole() {
+		return role;
 	}
-	public void setRoll(String roll) {
-		this.roll = roll;
+	public void setRole(String role) {
+		this.role = role;
 	}
 	public int getRaidGroup() {
 		return raidGroup;
@@ -55,12 +55,12 @@ public class Unity {
 	public void setRace(String race) {
 		this.race = race;
 	}
-	public Unity() {
+	public Guild() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Unity [id=" + id + ", name=" + name + ", character=" + character + ", roll=" + roll + ", raidGroup="
+		return "Unity [id=" + id + ", name=" + name + ", character=" + character + ", role=" + role + ", raidGroup="
 				+ raidGroup + ", race=" + race + "]";
 	}
 
