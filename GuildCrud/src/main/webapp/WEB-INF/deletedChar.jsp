@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="settings.css">
 <meta charset="UTF-8">
 <title>Character Deleted</title>
 </head>
