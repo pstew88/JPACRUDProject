@@ -28,7 +28,8 @@
 			<option value="Shaman">Shaman</option>
 			<option value="Warlock">Warlock</option>
 			
-		</select> <br> 
+		</select> 
+		<br> 
 		<label for="role">Select role<select name="role" id="role">
 			<option value="Dps">Dps</option>
 			<option value="Tank">Tank</option>

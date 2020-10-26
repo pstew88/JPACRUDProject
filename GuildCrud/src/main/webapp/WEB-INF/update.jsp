@@ -31,7 +31,7 @@
 			<option value="Warlock">Warlock</option>
 			
 		</select> <br> 
-		<label for="role">Change role from <b><u>${guild.role}</u></b>to</label>
+		<label for="role">Change role from <b><u>${guild.role}</u></b> to</label>
 		 <select name="role" id="role">
 			<option value="${guild.role}" selected>${guild.role}</option>
 			<option value="Dps">Dps</option>
@@ -40,7 +40,7 @@
 			</select>
 			<br>
 
-			<label for="raidGroup"> Change raid group from <b><u>${guild.raidGroup}</u></b>to</label>
+			<label for="raidGroup"> Change raid group from <b><u>${guild.raidGroup}</u></b> to</label>
 			<select name="raidGroup" id="raidGroup">
 				<option value="${guild.raidGroup}" selected>${guild.raidGroup}</option>
 				<option value="1">1</option>
