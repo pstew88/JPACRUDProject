@@ -78,15 +78,15 @@ public class GuildDAOImpl implements GuildDAO {
 
 		return newChar;
 	}
-
+	
 	@Override
-	public boolean deleteChar(int delChar) {
+	public boolean deleteChar(int id) {
 
-			Guild guild= em.find(Guild.class, delChar);
-			em.remove(guild);
-			em.flush();
+			Guild character= em.find(Guild.class, id);
+			em.remove(character);
+			boolean isDeleted = ! em.contains(character);
 			
-			boolean isDeleted = ! em.contains(delChar);
+			em.flush();
 			return isDeleted;
 		}	
 
@@ -100,14 +100,6 @@ public class GuildDAOImpl implements GuildDAO {
 		g.setRaidGroup(eChar.getRaidGroup());
 		g.setRole(eChar.getRole());
 		
-//		String jpql = "SELECT g FROM Guild g WHERE g.id = :id";
-//		Guild emps = em.createQuery(jpql, Guild.class).getSingleResult();
-//		emps.setId(eChar.getId());
-//		emps.setName(eChar.getName());
-//		emps.setCharacter(eChar.getCharacter());
-//		emps.setRace(eChar.getRace());
-//		emps.setRaidGroup(eChar.getRaidGroup());
-//		emps.setRole(eChar.getRole());
 		em.flush();
 		return g;
 	}

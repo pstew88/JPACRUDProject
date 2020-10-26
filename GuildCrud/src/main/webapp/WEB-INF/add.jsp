@@ -9,19 +9,17 @@
 <body>
 
 	<p>
-	<h2>Edit Character</h2>
+	<h2>Add Character</h2>
 	<p>
-	<form action="updatedChar.do" method="GET">
+	<form action="addChar.do" method="GET">
 
-		<input id="id" type="hidden" name="id" value="${guild.id}" /> <label
-			for="name"> Change name from <b><u>${guild.name}</u></b> to
-		</label> <input id="name" type="text" name="name" value="${guild.name}"
+	<label
+			for="name"> Create name </label> <input id="name" type="text" name="name" value="${guild.name}"
 			required /> <br> 
 			
-			<label for="character">Change class
-			from <b><u>${guild.character}</u></b> to
-		</label> <select name="character" id="character">
-			<option value="${guild.character}" selected>${guild.character}</option>
+			<label for="character">Select class
+			 </label> 
+			 <select name="character" id="character">
 			<option value="Druid">Druid</option>
 			<option value="Hunter">Hunter</option>
 			<option value="Mage">Mage</option>
@@ -31,18 +29,15 @@
 			<option value="Warlock">Warlock</option>
 			
 		</select> <br> 
-		<label for="role">Change role from <b><u>${guild.role}</u></b>to</label>
-		 <select name="role" id="role">
-			<option value="${guild.role}" selected>${guild.role}</option>
+		<label for="role">Select role<select name="role" id="role">
 			<option value="Dps">Dps</option>
 			<option value="Tank">Tank</option>
 			<option value="Healer">Healer</option>
 			</select>
 			<br>
 
-			<label for="raidGroup"> Change raid group from <b><u>${guild.raidGroup}</u></b>to</label>
+			<label for="raidGroup"> Select raid group </label>
 			<select name="raidGroup" id="raidGroup">
-				<option value="${guild.raidGroup}" selected>${guild.raidGroup}</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -54,18 +49,16 @@
 		</select>
 			<br>
 
-			<label for="race">Change race from <b><u>${guild.race}</u></b>
-				to
+			<label for="race">Select race
 		</label>
 			<select name="race" id="race">
-				<option value="${guild.race}" selected>${guild.race}</option>
 				<option value="Orc">Orc</option>
 				<option value="Troll">Troll</option>
 				<option value="Undead">Undead</option>
 				<option value="Tauren">Tauren</option>
 				</select>
 	
-	<input type="submit" value="Update Character" />
+	<input type="submit" value="Create Character" />
 			<input type="reset">
 	
 	</form>

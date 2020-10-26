@@ -22,6 +22,16 @@ public class GuildController {
 		return "index";
 	}
 
+	@RequestMapping(path = "index.do")
+	public String indexdo() {
+		return "index";
+	}
+
+	@RequestMapping(path = "add.do")
+	public String add() {
+		return "add";
+	}
+
 	@RequestMapping(path = "getId.do")
 	public String showName(int id, Model model) {
 		Guild guild = guildDao.findById(id);
@@ -65,9 +75,40 @@ public class GuildController {
 		return "result";
 	}
 
-	@RequestMapping(path = "update.do")
-	public String update() {
+	@RequestMapping(path = "SendToUpdate.do", method = RequestMethod.GET)
+	public String update(Integer id, Model model) {
+		model.addAttribute("guild", guildDao.findById(id));
 		return "update";
+	}
 
+//	@RequestMapping(path = "charUpdated.do", method = RequestMethod.GET)
+//	public String updated(Integer id, Model model) {
+//		model.addAttribute("guild", guildDao.findById(id));
+//		return "updatedChar";
+//	}
+
+	@RequestMapping(path = "addChar.do", method = RequestMethod.GET)
+	public String addChar(Guild guild, Model model) {
+		Guild addChar = guildDao.addChar(guild);
+		model.addAttribute("guild", addChar);
+		return "addedChar";
+
+	}
+
+	@RequestMapping(path = "updatedChar.do", method = RequestMethod.GET)
+	public String editChar(Integer id, Guild guild, Model model) {
+		System.out.println(id);
+		Guild updateChar = guildDao.editChar(id, guild);
+		model.addAttribute("guild", updateChar);
+		return "updatedChar";
+
+	}
+
+	@RequestMapping(path = "deleteChar.do")
+	public String deleteChar(Integer id, Model model) {
+		boolean deleteChar = guildDao.deleteChar(id);
+		System.out.println("*******************"+id);
+		model.addAttribute("deleted", deleteChar);
+		return "deletedChar";
 	}
 }

@@ -12,14 +12,20 @@
 <div>
 <c:choose>
 <c:when test= "${not empty guild}">
-  <h5>Roster # ${guild.id} ${guild.name} ${guild.race} ${guild.character})</h5>
+  <p>Roster # ${guild.id} ${guild.name} ${guild.race} ${guild.character}</p>
   <p>Role: ${guild.role} Group: ${guild.raidGroup}</p>
 <br>  
-  <form action="update.do" method="GET">
-  <input type="submit" value="Update Character" />
-  
+  <form action="SendToUpdate.do" method="GET">
+		<button name="id" type="submit" value="${guild.id}">Update 
+		Character</button>
 </form>
+  
 
+  <form action="deleteChar.do" method="GET">
+		<button name="id" type="submit" value="${guild.id}">Delete
+			Character</button>
+	</form>
+  
 </c:when>
 
 <c:when test="${not empty guilds}">
